@@ -18,7 +18,7 @@ def git_push():
     if repo.is_dirty:
         my_git = repo.git
         my_git.add('.')
-        repo.index.commit('update repo')
+        repo.index.commit('update repo, add new data')
     remote = repo.remote()
     remote.push()
     
