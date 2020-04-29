@@ -22,6 +22,7 @@ def main():
     # merge_data.merge_all()
     # print('data merged')
     git_file.git_push()
+    print('push successfully')
 
 
 if __name__ == '__main__':
