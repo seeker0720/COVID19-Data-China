@@ -8,10 +8,10 @@
 @Desc:
 """
 import os
-from core import data_DXY, data_TX, common, merge_data
+from core import data_DXY, data_TX, common, merge_data, git_file
 
 # 默认选项‘on’，自动运行；‘off’选项，关闭自动运行
-@common.auto_runner('on')
+@common.auto_runner('off')
 def main():
     data_DXY.download()
     print('DXY json file download')
@@ -21,6 +21,7 @@ def main():
     # 将每天的数据合并到一个文件
     # merge_data.merge_all()
     # print('data merged')
+    git_file.git_push()
 
 
 if __name__ == '__main__':
