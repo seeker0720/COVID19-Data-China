@@ -36,18 +36,20 @@ def auto_runner(status='on'):
 
                 while ((time.time() + 8 * 3600) // 86400 + 1) * 86400 - 8 * 3600 - int(time.time()) - second_count > 0:
                     tmp_t = ((time.time() + 8 * 3600) // 86400 + 1) * 86400 - 8 * 3600 - int(time.time()) - second_count
-                    info = second_to_hms(t=tmp_t)
-                    print(f'等待时长: {info}', end='\r')
+                    time.sleep(tmp_t)
+                    #info = second_to_hms(t=tmp_t)
+                    #print(f'等待时长: {info}', end='\r')
                 else:
                     print(f'[{time.strftime("%Y-%m-%d %H:%M:%S")}] 程序<{func.__name__}>开始执行。。。')
                     func(*args, **kwargs)
                     print(f'[{time.strftime("%Y-%m-%d %H:%M:%S")}] 程序<{func.__name__}>当日执行完成。。。')
 
                 sleep_seconds = ((time.time() + 8 * 3600) // 86400 + 1) * 86400 - 8 * 3600 - int(time.time())
-                print(f'[{time.strftime("%Y-%m-%d %H:%M:%S")}] 程序<{func.__name__}>将在 {int(sleep_seconds / 60)} 后进入新的执行过程。。。')    
-                while ((time.time() + 8 * 3600) // 86400 + 1) * 86400 - 8 * 3600 - int(time.time()) - second_count < 0:    
-                    tmp_t = ((time.time() + 8 * 3600) // 86400 + 1) * 86400 - 8 * 3600 - int(time.time()) - second_count
-                    info = second_to_hms(t=tmp_t)
-                    print(f'等待时长: {info}', end='\r')
+                print(f'[{time.strftime("%Y-%m-%d %H:%M:%S")}] 程序<{func.__name__}>将在 {second_to_hms(t=sleep_seconds)} 后进入新的执行过程。。。')    
+                time.sleep(sleep_seconds)
+                #while ((time.time() + 8 * 3600) // 86400 + 1) * 86400 - 8 * 3600 - int(time.time()) - second_count < 0:    
+                #    tmp_t = ((time.time() + 8 * 3600) // 86400 + 1) * 86400 - 8 * 3600 - int(time.time()) - second_count
+                    #info = second_to_hms(t=tmp_t)
+                    #print(f'等待时长: {info}', end='\r')
         return inner
     return wrapper
