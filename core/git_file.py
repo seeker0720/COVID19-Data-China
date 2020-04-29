@@ -13,12 +13,12 @@ def git_push():
     repo = git.Repo(path=BASE_DIR)
     if len(repo.untracked_files) > 0:
         repo.index.add(items=repo.untracked_files)
-        commit_info = 'add new file' 
+        commit_info = 'add new data file' 
         repo.index.commit(commit_info)
     if repo.is_dirty:
         my_git = repo.git
         my_git.add('.')
-        repo.index.commit('update repo, add new data')
+        repo.index.commit('update repo')
     remote = repo.remote()
     remote.push()
     
