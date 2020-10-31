@@ -8,7 +8,7 @@
 @Desc:
 """
 from core import data_DXY, data_TX, common, merge_data, git_file
-status = 'on'
+status = 'off'
 # 默认选项‘on’，自动运行；‘off’选项，关闭自动运行
 
 

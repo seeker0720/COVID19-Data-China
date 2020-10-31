@@ -15,4 +15,4 @@ pip3 install -r requirements.txt
 ```bash
 python3 run.py
 ```
-
+***截至2020-10-23 停止更新，数据并未将境外输入病例与国内病例区分，在此说明
