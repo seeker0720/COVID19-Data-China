@@ -9,4 +9,4 @@ lxml==4.4.1
 requests==2.22.0
 smmap==3.0.2
 soupsieve==1.9.4
-urllib3==1.25.6
+urllib3==1.26.5
